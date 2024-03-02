@@ -1,0 +1,321 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Abel", sans-serif;
+}
+
+body{
+	font-size: 100%;
+}
+
+.wrapper{
+	display: grid;
+	grid-template-columns: 100px 400px 700px;
+	max-height: 100%;
+	gap: 20px;
+	color: navy;
+	justify-content: center;
+	align-items: center;
+}
+
+.small-cont{
+	border: 2px solid navy;
+	height: 450px;
+	padding: 10px auto;
+	transition: 0.5s ease-out;
+}
+
+.small-cont:hover{
+	box-shadow: 3px 3px 5px #adb5bd;
+	transform: scale(1.1);
+	margin: 2px;
+}
+
+.narrow{
+	display: flex;
+	writing-mode: sideways-lr;
+	text-transform: uppercase;
+	align-items: center;
+	justify-content: center;
+	font-size: .9em;
+	font-weight: bold;
+	word-spacing: 5px;
+	letter-spacing: 3px;
+}
+
+.medium{
+	background: url(teresa-jang.jpg);
+	opacity: 1.7;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+/*	background-blend-mode: multiply;*/
+	background-color: #219ebc;
+}
+
+.large{
+	display: grid;
+	grid-template-columns: 35px 1fr 100px;
+}
+
+
+
+/*THE THREE CONTAINER STYLING*/
+
+
+/*.mini{
+	border: 2px solid black;
+}*/
+
+.item1{
+	display: flex;
+	writing-mode: sideways-lr;
+	text-transform: uppercase;
+	align-items: flex-end;
+  	justify-content: flex-end;
+	font-weight: bold;
+	font-size: 0.6em;
+	padding-top: 40px;
+}
+
+.item2{
+	display: flex;
+	align-items: flex-end;
+	padding-bottom: 20px;
+	font-size: 2.5em;
+	word-spacing: 5px;
+	letter-spacing: 8px;
+	line-height: 1.2;
+}
+
+.item3{
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 40px 0;
+}
+
+.item3 .fa-arrow-down-long{
+  font-weight: bold;
+  font-size: 3.1em;
+}
+
+
+/*Nav INFORMATION Styling*/
+
+.nav-info{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+}
+
+.nav-info ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	list-style-type: none;
+	height: 50px;
+	gap: 20px;
+}
+
+
+.nav-info a{
+	text-decoration: none;
+	color: black;
+	height: 25px;
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	padding: 5px;
+	border-radius: 4px;
+	transition: 0.5s ease;
+	font-weight: bold;
+}
+
+.nav-info a:hover{
+	text-decoration: underline;
+	transform: scale(1.4);
+	margin: 3px;
+}
+
+/*Nav ICONS Styling*/
+
+
+.icon{
+	display: flex;
+	gap: 20px;
+}
+
+.icon i{
+	color: black;
+	font-weight: bold;
+	color: black;
+}
+
+.icon i:hover{
+	color: red;
+	background: white;
+}
+
+
+/*Nav Container Styling*/
+
+nav{
+
+	background: white;
+	box-shadow: 3px 3px 5px lightgray;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+nav h1{
+	position: absolute;
+	left: 70px;
+	font-size: 1em;
+}
+
+nav h1::before{
+	content: '';
+	background-color: red;
+	display: block;
+	width: auto;
+	height: 5px;
+}
+
+nav h1::after{
+	content: '';
+	background-color: red;
+	display: block;
+	width: auto;
+	height: 5px;
+}
+
+
+nav .icon{
+	position: absolute;
+	right: 20px;
+	font-size: 2em;
+}
+
+/* MEDIA Q */
+
+@media (max-width:810px){
+	.wrapper{
+		display: grid;
+		grid-template-columns:100px 400px;
+		grid-template-rows: 1fr 1fr;
+	}
+	.small-cont{
+		grid-column: 1/2;
+	}
+	.medium{
+		grid-column: 2/3;
+	}
+	.large{
+		grid-column: 1/-1;
+		grid-row: 2/3;
+	}
+
+	@media (max-width:785px){
+	.nav-info a{
+		display: none;
+	}
+
+	@media (max-width:450px){
+	.wrapper{
+		display: grid;
+		grid-template-columns: 300px;
+		grid-template-rows: repeat(3, 1fr);
+		max-width: 100%;
+		padding: 15px;
+	}
+
+	.small-cont{
+	border: 2px solid navy;
+	padding: 10px auto;
+}
+	.narrow{
+		grid-column: 1/-1;
+		writing-mode: horizontal-tb;
+		padding: 0 10px;
+	}
+	.medium{
+		grid-column: 1/-1;
+		grid-row: 2/3;
+	}
+	.large{
+		grid-column: 1/-1;
+		grid-row: 3/4;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.item1{
+		padding: 10px;
+	}
+
+	.item2{
+		font-size: 1.5em;
+		word-spacing: 2px;
+		letter-spacing: 3px;
+		line-height: 1.2;
+		padding: 20px 10px;
+	}
+
+	.nav-info a{
+		display: none;
+	}
+}
+
+
+/*.wrapper{
+	min-width: 450px;
+	display: grid;
+	grid-template-columns: 100px 400px 700px;
+	max-height: 100%;
+	gap: 20px;
+	color: navy;
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+}
+
+.small-cont{
+	border: 2px solid navy;
+	height: 450px;
+	padding: 10px auto;
+}
+
+.narrow{
+	display: flex;
+	writing-mode: sideways-lr;
+	text-transform: uppercase;
+	align-items: center;
+	justify-content: center;
+	font-size: .9em;
+	font-weight: bold;
+	word-spacing: 5px;
+	letter-spacing: 3px;
+}
+
+.medium{
+	background: url(teresa-jang.jpg);
+	opacity: 1.7;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+/*	background-blend-mode: multiply;
+	background-color: #219ebc;
+}*/*/
+
+
